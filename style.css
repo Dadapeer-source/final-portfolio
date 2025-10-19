@@ -1,3 +1,4 @@
+/* ===== Reset & Base ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,24 +7,82 @@
 }
 
 body {
+  height: 100%;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
   background: linear-gradient(135deg, #00D9FF, #00FFA8, #007BFF, #00CFFF, #1E90FF);
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
-  color: white;
-  overflow-x: hidden;
-  height: 100%;
-  cursor: none; /* Hide normal cursor */
+  cursor: none; /* hide default cursor */
 }
 
-/* Magic Cursor Canvas */
-#magicCursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 10000;
+/* ===== Certificate / Circuits Container ===== */
+.certificate-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.certificate-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.certificate-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* ===== Certificate / Circuits Buttons ===== */
+.cert-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cert-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  border: none;
+  background: #081733;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cert-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 15px #FFD700, 0 0 30px #FFD700, 0 0 45px #FFD700;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== Certificate Display ===== */
+.certificate-display {
+  margin-top: 50px;
+}
+
+.certificate-display img {
+  max-width: 80%;
+  border-radius: 12px;
+  border: 3px solid white;
+  box-shadow: 0 0 20px #FFD700;
 }
 
 /* ===== Header ===== */
@@ -131,13 +190,6 @@ nav {
   box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
 }
 
-/* Gradient Animation */
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 /* Social Icons */
 .social-icons {
   margin: 20px 0;
@@ -161,11 +213,6 @@ nav {
   color: #06142B;
 }
 
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0.6; }
-}
-
 /* About */
 .about-me {
   text-align: center;
@@ -187,4 +234,34 @@ footer {
   padding: 25px 15px;
   background: rgba(0, 0, 0, 0.3);
   font-size: 0.9rem;
+}
+
+/* ===== Magic Cursor Canvas (for all pages) ===== */
+#magicCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ===== Animations ===== */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.6; }
 }

@@ -1,4 +1,4 @@
-// ===== Magic Cursor Particle Effect with Gradient Colors =====
+// ===== Magic Cursor Particle Effect (applies to all pages) =====
 const canvas = document.getElementById("magicCursor");
 const ctx = canvas.getContext("2d");
 
@@ -59,3 +59,22 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+
+// ===== Certificate / Circuits Open Function =====
+function openCertificate(certName) {
+    const certificates = {
+        python: "C:/Users/Dadapeer/Desktop/portfolio/img/mathplotlib.jpg",
+        data_viz: "C:/Users/Dadapeer/Desktop/portfolio/img/data_visulaization.jpg",
+        ai: "C:/Users/Dadapeer/Desktop/portfolio/img/AI.jpg",
+        digital_marketing: "C:/Users/Dadapeer/Desktop/portfolio/img/digital_marketing.jpg",
+        aws: "C:/Users/Dadapeer/Desktop/portfolio/img/data_visulaization.jpg",
+        resume: "C:/Users/Dadapeer/Desktop/portfolio/img/Resume.pdf"
+    };
+
+    const url = certificates[certName];
+    if(url) {
+        window.open(url, "_blank");
+    } else {
+        alert("Certificate not available!");
+    }
+}
