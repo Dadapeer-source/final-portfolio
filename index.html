@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Magic Cursor Canvas -->
+  <canvas id="magicCursor"></canvas>
+
   <!-- ===== Header / Navigation ===== -->
   <header>
     <nav>
@@ -16,7 +19,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Skills</a></li>
         <li><a href="#">Projects</a></li>
-        <li><a href="certificates.html">Certificates</a></li> <!-- Correct link -->
+        <li><a href="certificates.html">Certificates</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <button class="btn">View Resume</button>
@@ -26,7 +29,7 @@
   <!-- ===== Hero / Profile Section ===== -->
   <section class="hero">
     <div class="content">
-      <img src="img/Dadapeer_pass_photo.jpeg" alt="Profile" class="profile" /> <!-- Updated photo link -->
+      <img src="img/Dadapeer_pass_photo.jpeg" alt="Profile" class="profile" />
       <button class="btn view-profile">View Profile</button>
 
       <h2>Hello, I'm <span>Dadapeer</span></h2>
@@ -73,19 +76,7 @@
     <p>© 2025 Dadapeer | All Rights Reserved</p>
   </footer>
 
-  <script>
-    // Floating glow effect on buttons and nav links
-    document.querySelectorAll('.btn, .nav-links a').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        el.style.background = `radial-gradient(circle at ${x}px ${y}px, white, #ff00ff)`;
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.background = '';
-      });
-    });
-  </script>
+  <!-- External Script -->
+  <script src="script.js"></script>
 </body>
 </html>
