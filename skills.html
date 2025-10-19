@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - Dadapeer</title>
+  <style>
+    /* ===== General Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #00D9FF, #00FFA8, #007BFF, #00CFFF, #1E90FF);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: white;
+      min-height: 100vh;
+      padding: 40px 20px;
+      cursor: none; /* hide normal cursor */
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== Magic Cursor Canvas ===== */
+    #magicCursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    /* ===== Skills List ===== */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skills-list .skill {
+      background: #FFD700; /* floating highlight */
+      color: black;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .skills-list .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    }
+
+    /* ===== Back to Home Button ===== */
+    .back-btn {
+      display: block;
+      margin: 50px auto 0 auto;
+      background: #081733;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .back-btn:hover {
+      background: #06142B;
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+    }
+
+    @media screen and (max-width: 768px) {
+      .skills-list {
+        justify-content: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== Magic Cursor Canvas ===== -->
+  <canvas id="magicCursor"></canvas>
+
+  <!-- ===== Page Title ===== -->
+  <h1>Skills</h1>
+
+  <!-- ===== Programming Languages ===== -->
+  <section class="skill-section">
+    <h2>Programming Languages</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">Microcontroller Programming</div>
+      <div class="skill">R Programming</div>
+    </div>
+  </section>
+
+  <!-- ===== Web Technologies ===== -->
+  <section class="skill-section">
+    <h2>Web Technologies</h2>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+    </div>
+  </section>
+
+  <!-- ===== Tools & Libraries ===== -->
+  <section class="skill-section">
+    <h2>Tools & Libraries</h2>
+    <div class="skills-list">
+      <div class="skill">NumPy</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">Matplotlib</div>
+      <div class="skill">Arduino</div>
+    </div>
+  </section>
+
+  <!-- ===== Databases ===== -->
+  <section class="skill-section">
+    <h2>Databases</h2>
+    <div class="skills-list">
+      <div class="skill">MySQL</div>
+      <div class="skill">DBMS</div>
+    </div>
+  </section>
+
+  <!-- ===== Professional Skills ===== -->
+  <section class="skill-section">
+    <h2>Professional Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Team Collaboration</div>
+      <div class="skill">Leadership</div>
+      <div class="skill">Designing</div>
+      <div class="skill">Problem Analysis</div>
+      <div class="skill">Time Management</div>
+      <div class="skill">Critical Thinking</div>
+      <div class="skill">Communication</div>
+      <div class="skill">Adaptability</div>
+      <div class="skill">Creativity</div>
+    </div>
+  </section>
+
+  <!-- ===== Back to Home Button ===== -->
+  <a href="index.html" class="back-btn">Back to Home</a>
+
+  <!-- ===== Magic Cursor Script ===== -->
+  <script>
+    const canvas = document.getElementById("magicCursor");
+    const ctx = canvas.getContext("2d");
+
+    let particles = [];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 8 + 3;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+        this.color = `hsl(${Math.random() * 360}, 100%, 50%)`; // colorful particles
+        this.opacity = 1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.02;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    window.addEventListener("mousemove", e => {
+      for (let i = 0; i < 4; i++) {
+        particles.push(new Particle(e.x, e.y));
+      }
+    });
+
+    function handleParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].opacity <= 0) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-// ===== Magic Cursor Particle Effect =====
+// ===== Magic Cursor Particle Effect with Gradient Colors =====
 const canvas = document.getElementById("magicCursor");
 const ctx = canvas.getContext("2d");
 
@@ -15,10 +15,10 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 8 + 3;
+    this.size = Math.random() * 8 + 4;
     this.speedX = Math.random() * 3 - 1.5;
     this.speedY = Math.random() * 3 - 1.5;
-    this.color = "rgba(255,215,0,1)"; // Gold color
+    this.color = `hsl(${Math.random()*360}, 100%, 60%)`; // Gradient colors
     this.opacity = 1;
   }
   update() {
@@ -37,7 +37,7 @@ class Particle {
 }
 
 window.addEventListener("mousemove", e => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     particles.push(new Particle(e.x, e.y));
   }
 });
