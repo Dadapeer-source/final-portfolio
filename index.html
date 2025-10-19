@@ -16,9 +16,9 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Skills</a></li>
         <li><a href="#">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li> <!-- Correct link -->
         <li><a href="#">Contact</a></li>
       </ul>
-      <!-- Changed Download CV to View Resume -->
       <button class="btn">View Resume</button>
     </nav>
   </header>
@@ -26,36 +26,26 @@
   <!-- ===== Hero / Profile Section ===== -->
   <section class="hero">
     <div class="content">
-      <img src="https://i.imgur.com/q8A1fZP.png" alt="Profile" class="profile" />
+      <img src="img/Dadapeer_pass_photo.jpeg" alt="Profile" class="profile" /> <!-- Updated photo link -->
       <button class="btn view-profile">View Profile</button>
 
-      <h2>Hello, I'm <span>Your Name</span></h2>
+      <h2>Hello, I'm <span>Dadapeer</span></h2>
       <h3>I'm a Web Developer</h3>
       <p>I design and develop modern, responsive websites with passion and creativity.</p>
 
-      <!-- Social Icons with proper SVGs -->
+      <!-- Social Icons -->
       <div class="social-icons">
-        <!-- Email -->
-        <a href="mailto:example@gmail.com" target="_blank" class="icon email">
-          ✉️
-        </a>
-        <!-- LinkedIn -->
+        <a href="mailto:example@gmail.com" target="_blank" class="icon email">✉️</a>
         <a href="https://linkedin.com" target="_blank" class="icon linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
             <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.7v2.2h.05c.51-.97 1.76-2 3.63-2 3.88 0 4.6 2.55 4.6 5.86V24h-4V14.25c0-2.37-.04-5.42-3.3-5.42-3.3 0-3.8 2.58-3.8 5.24V24h-4V8z"/>
           </svg>
         </a>
-        <!-- GitHub -->
         <a href="https://github.com" target="_blank" class="icon github">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
             <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.25-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.465-2.382 1.235-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23a11.52 11.52 0 013.003-.403c1.02.005 2.046.138 3.003.403 2.29-1.553 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.625-5.475 5.921.43.37.813 1.096.813 2.21 0 1.595-.014 2.877-.014 3.268 0 .323.216.699.825.581C20.565 22.295 24 17.798 24 12.5 24 5.87 18.627.5 12 .5z"/>
           </svg>
         </a>
-      </div>
-
-      <div class="buttons">
-        <button class="btn">Hire Me</button>
-        <button class="btn">Contact Me</button>
       </div>
     </div>
   </section>
@@ -64,29 +54,27 @@
   <section class="about-me">
     <h2>About Me</h2>
     <p class="about-content">
-      <!-- Your about content goes here -->
+      Hey 👋 I'm Dadapeer. I'm a BCA student passionate about full-stack development and machine learning. I enjoy working on smart tech projects.
     </p>
-    <button class="btn explore-btn">Explore Me</button>
   </section>
 
   <!-- ===== Explore Sub-Pages Buttons ===== -->
   <section class="explore-pages">
-    <button class="btn">Skills</button>
-    <button class="btn">Certificates</button>
-    <button class="btn">Projects</button>
-    <button class="btn">Resume</button>
-    <button class="btn">Contact</button>
-    <button class="btn">Education</button>
+    <a href="#" class="btn">Skills</a>
+    <a href="certificates.html" class="btn">Certificates</a>
+    <a href="#" class="btn">Projects</a>
+    <a href="#" class="btn">Resume</a>
+    <a href="#" class="btn">Contact</a>
+    <a href="#" class="btn">Education</a>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer>
     <p>© 2025 Dadapeer | All Rights Reserved</p>
-<script src="script.js"></script>
   </footer>
 
   <script>
-    // Floating glow effect
+    // Floating glow effect on buttons and nav links
     document.querySelectorAll('.btn, .nav-links a').forEach(el => {
       el.addEventListener('mousemove', e => {
         const rect = el.getBoundingClientRect();

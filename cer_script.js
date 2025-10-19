@@ -1,14 +1,15 @@
 function openCertificate(certName) {
-    // Map certificate names to image URLs
+    // Map certificate names to your local file paths
     const certificates = {
-        python: "certificates/python_certificate.jpg",
-        data_viz: "certificates/data_viz_certificate.jpg",
-        ai: "certificates/ai_certificate.jpg",
-        digital_marketing: "certificates/digital_marketing_certificate.jpg",
-        aws: "certificates/aws_certificate.jpg"
+        python: "C:/Users/Dadapeer/Desktop/portfolio/img/mathplotlib.jpg",
+        data_viz: "C:/Users/Dadapeer/Desktop/portfolio/img/data_visulaization.jpg",
+        ai: "C:/Users/Dadapeer/Desktop/portfolio/img/AI.jpg",
+        digital_marketing: "C:/Users/Dadapeer/Desktop/portfolio/img/digital_marketing.jpg", // add file if available
+        aws: "C:/Users/Dadapeer/Desktop/portfolio/img/data_visulaization.jpg",
+        resume: "C:/Users/Dadapeer/Desktop/portfolio/img/Resume.pdf"
     };
 
-    // Open certificate image in a new tab
+    // Open certificate file in a new tab
     const url = certificates[certName];
     if(url) {
         window.open(url, "_blank");
