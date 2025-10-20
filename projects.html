@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Dadapeer</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* Left-align the projects container */
+    .cert-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* left alignment */
+      gap: 30px;
+      width: 100%;
+    }
+
+    /* Enlarge project boxes vertically */
+    .skill-section {
+      width: 100%;
+      max-width: 900px;
+      padding: 60px 40px; /* bigger height */
+      text-align: left; /* heading and content left-aligned */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Magic Cursor Canvas -->
+  <canvas id="magicCursor"></canvas>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Dadapeer</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Projects Container -->
+  <div class="certificate-container">
+    <h1>My Projects</h1>
+    <p>Check out some of my recent works and development projects.</p>
+
+    <div class="cert-buttons">
+
+      <!-- Project 1 -->
+      <div class="skill-section">
+        <h2>Project 1: RFID-based Gas Control & Detection System</h2>
+        <p>Based on microcontroller programming using Arduino (C/C++)</p>
+        <button class="cert-btn" onclick="window.open('https://github.com/Dadapeer-source/Smart-gas-detection-.git','_blank')">🚀 GitHub</button>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="skill-section">
+        <h2>Project 2: RFID-based Automated Milk Dispensing System</h2>
+        <p>Based on microcontroller programming using Arduino</p>
+        <button class="cert-btn" onclick="window.open('https://github.com/Dadapeer-source/milk-dispenser-.git','_blank')">🚀 GitHub</button>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="skill-section">
+        <h2>Project 3: Web Application Development - Appsy</h2>
+        <p>Developed using full-stack web technologies</p>
+        <button class="cert-btn" onclick="window.open('https://github.com/Dadapeer-source/new.git','_blank')">🚀 GitHub</button>
+      </div>
+
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+
+</body>
+</html>
