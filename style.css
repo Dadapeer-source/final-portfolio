@@ -425,3 +425,88 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+
+/* ===== New Layout Like Reference Photo ===== */
+.new-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 90vh;
+}
+
+.hero-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 1100px;
+  width: 100%;
+  gap: 50px;
+}
+
+.profile-side {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.profile-side .profile {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 40px white;
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.profile-role {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.about-side {
+  flex: 2;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.about-side h2 {
+  color: #FFD700;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #FFD700;
+}
+
+.about-side p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: white;
+}
+
+.more-btn-box {
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 900px) {
+  .hero-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-side {
+    text-align: center;
+  }
+}
