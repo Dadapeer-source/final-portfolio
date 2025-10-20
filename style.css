@@ -241,10 +241,10 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   pointer-events: none;
-  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
 }
 
 /* ===== Animations ===== */
@@ -264,4 +264,80 @@ footer {
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0.6; }
+}
+
+/* ===== Back to Home Button for Certificates Page ===== */
+.back-btn {
+  display: block;
+  margin: 50px auto 0 auto;
+  background: #081733;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+}
+
+.back-btn:hover {
+  background: #06142B;
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+}
+
+/* ===== Skills Page Styles Added Below ===== */
+
+/* ===== Skills List ===== */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skills-list .skill {
+  background: #FFD700; /* floating highlight */
+  color: black;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skills-list .skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-list {
+    justify-content: center;
+  }
+}
+
+/* ===== Floating Profile Animation ===== */
+.floating-profile {
+  display: inline-block;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-1deg);
+  }
 }
