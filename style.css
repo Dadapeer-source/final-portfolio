@@ -341,3 +341,87 @@ footer {
     transform: translateY(-15px) rotate(-1deg);
   }
 }
+/* ===== Enhanced Skills Page Layout (like the reference photo) ===== */
+
+.page-title {
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px #FFD700;
+}
+
+/* Skills container */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Each skill section box */
+.skill-section {
+  width: 90%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.skill-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+}
+
+/* Section titles */
+.skill-section h2 {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-shadow: 0 0 10px #FFD700;
+}
+
+/* Skill box grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* Individual skill boxes */
+.skill-box {
+  background: white;
+  color: #081733;
+  padding: 12px 25px;
+  font-weight: 600;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  background: #FFD700;
+  color: #06142B;
+  box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .skill-section {
+    width: 95%;
+    padding: 20px 10px;
+  }
+  .skill-section h2 {
+    font-size: 1.5rem;
+  }
+}
