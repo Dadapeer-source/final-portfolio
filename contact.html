@@ -2,42 +2,244 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Me</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Dadapeer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ===== Centering Page & Contact Card ===== */
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background: linear-gradient(135deg, #00D9FF, #00FFA8, #007BFF, #00CFFF, #1E90FF);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      cursor: none; /* hide default cursor */
+      overflow-x: hidden;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+      padding: 40px 50px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      font-size: 1.8rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+      align-items: center;
+    }
+
+    input, textarea {
+      background: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 15px;
+      color: #120101;
+      font-size: 1rem;
+      resize: none;
+      outline: none;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    button, .back-home {
+      background: #ffd86f;
+      color: #333;
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    button:hover, .back-home:hover {
+      background: #ffcd38;
+      box-shadow: 0 0 20px rgba(255, 216, 111, 0.5);
+      transform: translateY(-3px);
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 25px;
+      text-decoration: none;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 50% 50%; }
+      50% { background-position: 100% 50%; }
+      75% { background-position: 50% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Canvas on top of background but below form */
+    #magicCursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      .contact-card {
+        padding: 25px 30px;
+      }
+      input, textarea {
+        max-width: 100%;
+      }
+      button {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Magic Cursor Canvas -->
+  <!-- Canvas for Magic Cursor -->
   <canvas id="magicCursor"></canvas>
 
-  <div class="contact-container">
-    <h2>Mail Me This</h2>
-    <form id="contactForm">
-      <label for="userEmail">Your Email</label>
-      <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
+  <div class="contact-card">
+    <h2>📬 Mail Me</h2>
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+    <form id="mailForm">
+      <input type="email" id="fromEmail" placeholder="Your Email" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Enter your message" rows="6" required></textarea>
-
-      <button type="submit" class="send-btn">Send Message</button>
+      <button type="submit">Send Message ✉️</button>
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
     </form>
-
-    <a href="index.html" class="back-btn">Back to Home</a>
   </div>
 
   <script>
-    // ===== Contact Form Email =====
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // ===== Email Form Handling =====
+    const form = document.getElementById('mailForm');
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = 'dadapeer09012005@gmail.com';
-      const subject = document.getElementById('subject').value;
-      const body = "From: " + document.getElementById('userEmail').value + "\n\n" + document.getElementById('message').value;
-      window.location.href = mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)};
+      const from = document.getElementById('fromEmail').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!from.includes("@")) {
+        alert("Please enter a valid email address containing '@'.");
+        return;
+      }
+      const mailtoLink = `mailto:dadapeer09012005@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + from + "\n\n" + message)}`;
+      try {
+        window.location.href = mailtoLink;
+        alert("✅ Mail opened successfully! You can now send it.");
+      } catch (error) {
+        alert("❌ Failed to open email client. Please try again.");
+      }
+      form.reset();
     });
+
+    // ===== Magic Cursor Particle Effect =====
+    const canvas = document.getElementById("magicCursor");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 8 + 4;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.opacity = 1;
+        this.hue = Math.random() * 360;
+        this.color = `hsl(${this.hue}, 100%, 60%)`;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.size -= 0.05;
+        this.opacity -= 0.02;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 25;
+        ctx.globalAlpha = this.opacity;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    window.addEventListener("mousemove", (e) => {
+      for (let i = 0; i < 5; i++) {
+        particles.push(new Particle(e.x, e.y));
+      }
+    });
+
+    function handleParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.update();
+        p.draw();
+        if (p.size <= 0.3 || p.opacity <= 0) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
