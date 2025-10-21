@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Education</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ==== Education Page Styling ==== */
+    body {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .education-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .education-header i {
+      font-size: 2.2rem;
+      color: #ffe100;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      color: #f2f2f2;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    .education-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .edu-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .edu-box:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .edu-box i {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffe100;
+    }
+
+    .edu-box h2 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .edu-box span {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    .edu-box p {
+      margin: 5px 0;
+      color: #e0e0e0;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      background: #00ffcc;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #fff;
+      color: #007bff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+	 <!-- ===== Magic Cursor Canvas ===== -->
+  <canvas id="magicCursor"></canvas>
+
+  <!-- ===== Header Section ===== -->
+  <div class="education-header">
+    <i class="fas fa-graduation-cap"></i>
+    <h1>My Education</h1>
+  </div>
+  <p class="quote"><span>Knowledge is the seed from which creativity and innovation bloom.</span></p>
+
+  <!-- ===== Education Boxes ===== -->
+  <div class="education-container">
+    <!-- Box 1 -->
+    <div class="edu-box">
+      <i class="fas fa-university"></i>
+      <h2>Bachelor of Computer Application <br><span>(BCA)</span></h2>
+      <p><span>Computer Science</span></p>
+      <p>The National Degree College, Bagepalli</p>
+      <p>2023 – 2026</p>
+      <p>(Result: Pursuing)</p>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="edu-box">
+      <i class="fas fa-school"></i>
+      <h2>Pre University Course <br><span>(PUC)</span></h2>
+      <p><span>Commerce (EBACS)</span></p>
+      <p>The National PU College, Bagepalli</p>
+      <p>2021 – 2023</p>
+      <p>(Result: 92.5%)</p>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="edu-box">
+      <i class="fas fa-book"></i>
+      <h2>SSLC <br><span>(GBHS)</span></h2>
+      <p>Government Boys High School, Bagepalli</p>
+      <p>2020 – 2021</p>
+      <p>(Result: 86%)</p>
+    </div>
+  </div>
+
+  <!-- ===== Back to Home Button ===== -->
+  <a href="index.html" class="back-btn">Back to Home</a>
+</body>
+</html>
