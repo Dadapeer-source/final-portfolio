@@ -510,3 +510,171 @@ footer {
     text-align: center;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Responsive Design Fixes ===== */
+
+/* For tablets and small laptops */
+@media screen and (max-width: 1024px) {
+  nav {
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 15px;
+  }
+
+  .hero-right {
+    text-align: center;
+  }
+
+  .hero-left .profile {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-right h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 30px 10px;
+  }
+
+  .hero-left .profile {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-right h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-right h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-right p {
+    font-size: 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .about-me {
+    padding: 30px 15px;
+  }
+
+  .about-me h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-me p {
+    font-size: 1rem;
+  }
+
+  .explore-pages {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .explore-pages .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* For extra-small screens (less than 480px) */
+@media screen and (max-width: 480px) {
+  .hero-right h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-right h3 {
+    font-size: 1rem;
+  }
+
+  .hero-right p {
+    font-size: 0.9rem;
+  }
+
+  .hero-left .profile {
+    width: 150px;
+    height: 150px;
+  }
+
+  nav {
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .about-me h2,
+  .explore-pages a {
+    font-size: 1rem;
+  }
+}
